@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class CameraCtrl : MonoBehaviour
 {
-    float min = -3;
-    float max = 15;
-    public Transform PlayerPosition;
+    float min = -3; //min value of camera's x position
+    float max = 15; //max value of camera's x position
 
-    private void Start(){
-        transform.localPosition = new Vector3(PlayerPosition.localPosition.x, -2.954f, -10); //y and z is fixed
-    }
+    public Transform PlayerPosition; //record Player's position
 
     private void Update(){
-        float tmpX = Mathf.Clamp(PlayerPosition.localPosition.x, min, max);
+        float tmpX = Mathf.Clamp(PlayerPosition.localPosition.x, min, max); //camera follows player, but is limited in order not to get out of the scene's background
         transform.localPosition = new Vector3(tmpX, -2.954f, -10);
     }
 }
