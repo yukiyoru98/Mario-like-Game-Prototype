@@ -16,8 +16,8 @@ public class PlayerCtrl : MonoBehaviour
     bool GroundBool = true; //determines whether player is on the ground
 
     private void Start(){
-        body = this.gameObject.GetComponent<Rigidbody2D>(); //assign game object's rigidbody2D 
-        anim = this.gameObject.GetComponent<Animator>(); //assign game object's animator 
+        body = this.gameObject.GetComponent<Rigidbody2D>(); //assign Player_Root's rigidbody2D 
+        anim = this.gameObject.transform.GetChild(0).GetComponent<Animator>(); //assign Player's animator 
     }
    
     private void FixedUpdate() {
