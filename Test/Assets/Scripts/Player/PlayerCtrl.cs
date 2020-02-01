@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerCtrl : MonoBehaviour
 {
     private float Speed = 10.0f; //determines player's running speed
-    private float JumpVelocity = 300f; //refers to player's ability to jump
+    private float JumpVelocity = 600f; //refers to player's ability to jump
     private float HighFallMultiplier = 3.0f; //multipler for high jump's falling motion
     private float LowFallMultiplier = 2.0f; //multipler for low jump's falling motion
     Rigidbody2D body;
     Animator anim;
+    //boolean variables below are used to control animations
     bool RunBool = false; //determines whether player is running
     bool JumpKeyPressed = true;
     bool JumpingUpBool = false; //determines whether player is jumping up
@@ -42,13 +43,13 @@ public class PlayerCtrl : MonoBehaviour
     }
 
     void Jump(){
-        //can jump when (1)space is pressed (2)player is on the ground //(3)Jump Key not pressed
-        if(Input.GetKey(KeyCode.Space) && GroundBool){// && !JumpKeyPressed
+        //can jump when (1)space is pressed (2)player is on the ground (3)Jump Key not pressed
+        if(Input.GetKey(KeyCode.Space) && GroundBool && !JumpKeyPressed){ 
             //give a upward force(determined by JumpVelocity) to let player jump
             body.AddForce(Vector2.up * JumpVelocity);
         }
         //check current state of jump key to avoid infinite jump
-        //JumpKeyPressed = Input.GetKey(KeyCode.Space);//seemingly not neccesary
+        JumpKeyPressed = Input.GetKey(KeyCode.Space);
 
         //set bool: JumpingUpBool as true when player is moving upwards (velocity.y is (+)) 
         //and false when downwards (velocity.y is (-))
@@ -65,12 +66,15 @@ public class PlayerCtrl : MonoBehaviour
 
         //set bool: GroundBool as true when no vertical motion(velocity.y is 0)->player is on the ground
         GroundBool = (body.velocity.y == 0);
+        if(GroundBool){
+            Debug.Log("Ground");
+        }
 
     }
-
     void SetAnimator(){
         anim.SetBool("Running", RunBool);
         anim.SetBool("JumpingUp", JumpingUpBool);
         anim.SetBool("Ground", GroundBool);
     }
+
 }
