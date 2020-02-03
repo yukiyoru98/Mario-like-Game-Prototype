@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public int HP;
-    public int Life;
-    public int Money;
+    public int HP = 100;
+    public int Life = 3;
+    public int Money = 0;
     public bool Power = false;
 
     public static PlayerData self;
@@ -14,4 +14,7 @@ public class PlayerData : MonoBehaviour
         self = this;    
     }
 
+    public void EarnMoney(int money){
+        Money += money;
+    }
 }
