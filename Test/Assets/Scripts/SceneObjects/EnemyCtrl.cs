@@ -17,7 +17,6 @@ public class EnemyCtrl : MonoBehaviour
 
     private void Start(){
         body = this.GetComponent<Rigidbody2D>();
-        anim = this.transform.GetChild(0).GetComponent<Animator>();
         PreviousPos = this.transform.localPosition;
     }
 
@@ -26,7 +25,7 @@ public class EnemyCtrl : MonoBehaviour
         
         if(Time.time >= MaxTurnCD){ // check if stucked
             
-            if(Vector2.Distance(PreviousPos, this.transform.localPosition) <= 1.0f){ //is stucked
+            if(Vector2.Distance(PreviousPos, this.transform.localPosition) < 0.8f){ //is stucked
                 Speed *= -1; // change direction
                 ;
             }
@@ -42,7 +41,19 @@ public class EnemyCtrl : MonoBehaviour
             Speed *= -1; //change direction
             MaxTurnCD += TurnCD; // update check time
         }
+
+        if(collision.gameObject.tag == "Player" && collision.GetContact(0).normal != Vector2.up){
+            collision.gameObject.SendMessage("Hurt");
+        }
+        
     }
 
+    public void isKilled(){
+        anim = this.transform.GetChild(0).GetComponent<Animator>();
+        anim.SetBool("Dead", true);
+        //this.GetComponent<BoxCollider2D>().enabled = false; //seems not neccessary
+        Speed = 0; //stop moving
+        Destroy(this.gameObject, 0.2f);
+    }
 
 }

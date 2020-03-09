@@ -71,6 +71,12 @@ public class PlayerCtrl : MonoBehaviour
         }
 
     }
+
+    public void Hurt(){
+        anim.SetTrigger("Hurt");
+
+    }
+
     void SetAnimator(){
         anim.SetBool("Running", RunBool);
         anim.SetBool("JumpingUp", JumpingUpBool);
