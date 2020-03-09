@@ -67,7 +67,7 @@ public class PlayerCtrl : MonoBehaviour
         //set bool: GroundBool as true when no vertical motion(velocity.y is 0)->player is on the ground
         GroundBool = (body.velocity.y == 0);
         if(GroundBool){
-            Debug.Log("Ground");
+            //Debug.Log("Ground");
         }
 
     }

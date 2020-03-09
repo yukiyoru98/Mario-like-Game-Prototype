@@ -17,8 +17,8 @@ public class CollisionCtrl : MonoBehaviour
     }
     void CollideSceneObj(Collision2D collision){
         
-        Debug.Log("CollideSceneObj");
-        Debug.Log(collision.GetContact(0).normal);
+        //Debug.Log("CollideSceneObj");
+        //Debug.Log(collision.GetContact(0).normal);
 
         if(collision.gameObject.name == "Block_Root" && collision.GetContact(0).normal == Vector2.down){
             //if hit the bottom of the Block
