@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    public bool HurtBool = false; //determines whether player is hurt
+    public static PlayerCtrl self;
+    private void Awake(){
+        self = this;
+    }
     private float Speed = 10.0f; //determines player's running speed
     private float JumpVelocity = 600f; //refers to player's ability to jump
     private float HighFallMultiplier = 3.0f; //multipler for high jump's falling motion
@@ -15,16 +20,18 @@ public class PlayerCtrl : MonoBehaviour
     bool JumpKeyPressed = true;
     bool JumpingUpBool = false; //determines whether player is jumping up
     bool GroundBool = true; //determines whether player is on the ground
-
+    
     private void Start(){
         body = this.gameObject.GetComponent<Rigidbody2D>(); //assign Player_Root's rigidbody2D 
         anim = this.gameObject.transform.GetChild(0).GetComponent<Animator>(); //assign Player's animator 
     }
    
     private void FixedUpdate() {
-        Run();
-        Jump();
-        SetAnimator();
+        if(!HurtBool){ //can act only if if player is not hurt
+            Run();
+            Jump();
+            SetAnimator();
+        }
     }
     
     void Run(){
@@ -73,8 +80,10 @@ public class PlayerCtrl : MonoBehaviour
     }
 
     public void Hurt(){
+        
         anim.SetTrigger("Hurt");
-
+        HurtBool = true; // player is hurt
+        body.velocity = new Vector2(0, body.velocity.y);
     }
 
     void SetAnimator(){

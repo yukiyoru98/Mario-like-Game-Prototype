@@ -22,7 +22,7 @@ AnimationClip:
     - time: 0
       value: {fileID: -3678486818915674298, guid: 37426dfe5cfb14626a6e1c60f8d927eb,
         type: 3}
-    - time: 0.16666667
+    - time: 0.33333334
       value: {fileID: -3678486818915674298, guid: 37426dfe5cfb14626a6e1c60f8d927eb,
         type: 3}
     attribute: m_Sprite
@@ -51,7 +51,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.18333334
+    m_StopTime: 0.35000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -70,4 +70,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.31666666
+    functionName: HurtEnd
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

@@ -25,7 +25,7 @@ public class EnemyCtrl : MonoBehaviour
         
         if(Time.time >= MaxTurnCD){ // check if stucked
             
-            if(Vector2.Distance(PreviousPos, this.transform.localPosition) < 0.8f){ //is stucked
+            if(Vector2.Distance(PreviousPos, this.transform.localPosition) < 0.6f){ //is stucked
                 Speed *= -1; // change direction
                 ;
             }
@@ -41,11 +41,15 @@ public class EnemyCtrl : MonoBehaviour
             Speed *= -1; //change direction
             MaxTurnCD += TurnCD; // update check time
         }
+    }
 
-        if(collision.gameObject.tag == "Player" && collision.GetContact(0).normal != Vector2.up){
+    private void OnCollisionStay2D(Collision2D collision) { 
+        // use "Stay" to avoid player become invincible when sticking to the enemy
+        if(collision.gameObject.tag == "Player" && collision.GetContact(0).normal != Vector2.up){ //if hit Player
+            if(!PlayerCtrl.self.HurtBool && !PlayerInvincible.self.IsInvincible){ //if player is not hurt and is not invincible
             collision.gameObject.SendMessage("Hurt");
+            }
         }
-        
     }
 
     public void isKilled(){
