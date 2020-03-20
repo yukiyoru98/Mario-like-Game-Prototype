@@ -58,6 +58,7 @@ public class EnemyCtrl : MonoBehaviour
         //this.GetComponent<BoxCollider2D>().enabled = false; //seems not neccessary
         Speed = 0; //stop moving
         Destroy(this.gameObject, 0.2f);
+        ScoreCtrl.self.AddScore(100);
     }
 
 }

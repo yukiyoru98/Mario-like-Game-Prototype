@@ -12,28 +12,17 @@ public class BlockCtrl : MonoBehaviour
 
     public void isHit(bool Power){
         Debug.Log("is Hit");
-        if(!Power){
-            Move();
-        }
-        else{
-            Break();
-        }
-    }
-
-    void Move(){//play move animation when player's power is not enough -> SetBool Power=false, SetTrigger Hit
-        Debug.Log("Move");
-        anim.SetBool("Power", false);
+        //play move animation when player's power is not enough -> SetBool Power=false, SetTrigger Hit
+        anim.SetBool("Power", Power);
         anim.SetTrigger("Hit");
-    }
 
-    void Break(){
-        Debug.Log("Break");
-        //close boxCollider and play break animation when player's power is enough -> SetBool Power=true, SetTrigger Hit
-        this.GetComponent<BoxCollider2D>().enabled = false;
-        anim.SetBool("Power", true);
-        anim.SetTrigger("Hit");
-        //destroy block after break animation is finished(0.4sec)
-        Destroy(this.gameObject, 0.4f);
+        if(Power){
+            //close boxCollider and play break animation when player's power is enough -> SetBool Power=true, SetTrigger Hit
+            this.GetComponent<BoxCollider2D>().enabled = false;
+            //destroy block after break animation is finished(0.4sec)
+            Destroy(this.gameObject, 0.4f);
+            ScoreCtrl.self.AddScore(10);
+        }
     }
 
 
