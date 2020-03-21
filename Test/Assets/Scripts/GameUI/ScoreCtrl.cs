@@ -17,6 +17,9 @@ public class ScoreCtrl : MonoBehaviour
 
     public void AddScore(int score){
         ScoreNum += score;
+        if(ScoreNum > 99999){
+            ScoreNum = 99999;
+        }
         ScoreNumText.text = ScoreNum.ToString().PadLeft(MaxLength, PadZero);
     }
 }

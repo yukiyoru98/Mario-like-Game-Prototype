@@ -84,6 +84,7 @@ public class PlayerCtrl : MonoBehaviour
         anim.SetTrigger("Hurt");
         HurtBool = true; // player is hurt
         body.velocity = new Vector2(0, body.velocity.y);
+        LifeCtrl.self.LoseLife(1);
     }
 
     void SetAnimator(){

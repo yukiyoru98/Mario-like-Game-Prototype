@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public int HP = 100;
-    public int Life = 3;
+    public int MaxLife = 3;
+    public int CurrentLife;
     public int Money = 0;
     public bool Power = false;
 
@@ -14,7 +15,17 @@ public class PlayerData : MonoBehaviour
         self = this;    
     }
 
+    private void Start() {
+        CurrentLife = MaxLife;
+    }
     public void EarnMoney(int money){
         Money += money;
+    }
+
+    public void LoseLife(int life){
+        CurrentLife -= life;
+        if(CurrentLife < 0){
+            CurrentLife = 0;
+        }
     }
 }
