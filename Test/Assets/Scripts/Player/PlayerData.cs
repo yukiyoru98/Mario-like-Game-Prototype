@@ -20,6 +20,9 @@ public class PlayerData : MonoBehaviour
     }
     public void EarnMoney(int money){
         Money += money;
+        if(Money > 99){
+            Money = 1;
+        }
     }
 
     public void LoseLife(int life){
