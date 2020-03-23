@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public int HP = 100;
-    public int MaxLife = 3;
-    public int CurrentLife;
+    public int MaxHP = 3;
+    public int CurrentHP;
     public int Money = 0;
     public bool Power = false;
 
@@ -16,7 +16,7 @@ public class PlayerData : MonoBehaviour
     }
 
     private void Start() {
-        CurrentLife = MaxLife;
+        CurrentHP = MaxHP;
     }
     public void EarnMoney(int money){
         Money += money;
@@ -25,10 +25,10 @@ public class PlayerData : MonoBehaviour
         }
     }
 
-    public void LoseLife(int life){
-        CurrentLife -= life;
-        if(CurrentLife < 0){
-            CurrentLife = 0;
+    public void LoseHP(int hp){
+        CurrentHP -= hp;
+        if(CurrentHP < 0){
+            CurrentHP = 0;
         }
     }
 }

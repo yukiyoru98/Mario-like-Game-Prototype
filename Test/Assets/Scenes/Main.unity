@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 147703379}
   - component: {fileID: 147703380}
   m_Layer: 5
-  m_Name: Life
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,10 +180,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 147703377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28b8f8bca2b1b4002ab450faa0dc4b44, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c3cb806f053b4c36bda7ff34418ee0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeImage: []
+  HPImage: []
 --- !u!4 &179531108 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7520093700267432966, guid: 19a13e83efa3d424182451a41086c4e9,
@@ -833,8 +833,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  MaxLife: 3
-  CurrentLife: 0
+  MaxHP: 3
+  CurrentHP: 0
   Money: 0
   Power: 0
 --- !u!4 &696257597
