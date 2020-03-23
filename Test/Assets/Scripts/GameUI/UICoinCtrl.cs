@@ -15,6 +15,9 @@ public class UICoinCtrl : MonoBehaviour
     private int MaxLength = 2;
     private char PadZero = '0';
 
+    private void Start() {
+        GetMoney(0); //setup coin num for UI at the beginning of the scene
+    }
     public void GetMoney(int money){
         PlayerData.self.EarnMoney(money);
         Money = PlayerData.self.Money;

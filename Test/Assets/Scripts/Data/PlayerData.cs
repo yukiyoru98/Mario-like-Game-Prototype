@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public int HP = 100;
+    public int InitialLife = 3;
+    public int CurrentLife;
     public int MaxHP = 3;
     public int CurrentHP;
     public int Money = 0;
     public bool Power = false;
-
+    public int LevelNum = 0;
     public static PlayerData self;
     private void Awake() {
         self = this;    
@@ -17,11 +18,17 @@ public class PlayerData : MonoBehaviour
 
     private void Start() {
         CurrentHP = MaxHP;
+        CurrentLife = InitialLife;
+        while(Money > 99){
+            Money -= 99;
+            CurrentLife++;
+        }
     }
     public void EarnMoney(int money){
         Money += money;
-        if(Money > 99){
-            Money = 1;
+        while(Money > 99){
+            Money -= 99;
+            CurrentLife++;
         }
     }
 
@@ -30,5 +37,9 @@ public class PlayerData : MonoBehaviour
         if(CurrentHP < 0){
             CurrentHP = 0;
         }
+    }
+
+    public void NextLevel(){
+        LevelNum++;
     }
 }

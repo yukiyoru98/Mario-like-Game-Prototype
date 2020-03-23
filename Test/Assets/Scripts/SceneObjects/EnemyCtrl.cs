@@ -45,9 +45,10 @@ public class EnemyCtrl : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision) { 
         // use "Stay" to avoid player become invincible when sticking to the enemy
-        if(collision.gameObject.tag == "Player" && collision.GetContact(0).normal != Vector2.up){ //if hit Player
+        if(collision.gameObject.tag == "Player" && collision.GetContact(0).normal != Vector2.down){ //if hit Player
+            
             if(!PlayerCtrl.self.HurtBool && !PlayerInvincible.self.IsInvincible){ //if player is not hurt and is not invincible
-            collision.gameObject.SendMessage("Hurt");
+                collision.gameObject.SendMessage("Hurt");
             }
         }
     }

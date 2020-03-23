@@ -11,7 +11,7 @@ public class TimeCtrl : MonoBehaviour
     {
         self = this;
     }
-    private int MaxTime = 3;
+    private int MaxTime = 100;
     private int CurrentTime;
     private int MaxLength = 3;
     private char PadZero = '0';
@@ -29,7 +29,7 @@ public class TimeCtrl : MonoBehaviour
         }
         else
         {
-            CurrentTime = MaxTime - (int)Time.time;
+            CurrentTime = MaxTime - (int)Time.timeSinceLevelLoad;
         }
         TimeText.text = (CurrentTime.ToString()).PadLeft(MaxLength, PadZero);
     }
