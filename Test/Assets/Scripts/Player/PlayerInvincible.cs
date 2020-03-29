@@ -21,7 +21,7 @@ public class PlayerInvincible : MonoBehaviour
     }
 
     private void Update(){
-        if(IsInvincible){
+        if(IsInvincible && !PauseCtrl.self.isPaused){
             Flicker();
         }
     }

@@ -33,7 +33,11 @@ public class CollisionCtrl : MonoBehaviour
         if(collision.gameObject.name == "Enemy_Root" && collision.GetContact(0).normal == Vector2.up){
             //if hit the top of the CoinBlock
             collision.gameObject.SendMessage("isKilled");
-            print(collision.GetContact(0).normal );
+            //print(collision.GetContact(0).normal );
+        }
+        if(collision.gameObject.name == "Complete"){
+            //if reach goal
+            collision.gameObject.SendMessage("Complete");
         }
     }
     void TriggerSceneObj(Collider2D collider){
@@ -41,6 +45,5 @@ public class CollisionCtrl : MonoBehaviour
             //if touch the Coin
             collider.gameObject.SendMessage("GetCoin");
         }
-        
     }
 }

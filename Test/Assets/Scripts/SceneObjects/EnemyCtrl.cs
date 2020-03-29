@@ -17,17 +17,25 @@ public class EnemyCtrl : MonoBehaviour
 
     private void Start(){
         body = this.GetComponent<Rigidbody2D>();
+        anim = this.transform.GetChild(0).GetComponent<Animator>();
         PreviousPos = this.transform.localPosition;
     }
 
     private void FixedUpdate() {
+        if(PauseCtrl.self.isPaused){
+            anim.speed = 0;
+            body.velocity = Vector2.zero;
+            return;
+        }
+        else{
+            anim.speed = 1;
+        }
         body.velocity = new Vector2(Speed, body.velocity.y); //move
         
         if(Time.time >= MaxTurnCD){ // check if stucked
             
             if(Vector2.Distance(PreviousPos, this.transform.localPosition) < 0.6f){ //is stucked
                 Speed *= -1; // change direction
-                ;
             }
             PreviousPos = this.transform.localPosition; // record position
             MaxTurnCD = Time.time + TurnCD; // update check time
@@ -62,4 +70,8 @@ public class EnemyCtrl : MonoBehaviour
         ScoreCtrl.self.AddScore(100);
     }
 
+    void ChangeDirection(){
+        Speed *= -1;
+        transform.localScale = new Vector3(-transform.localScale.x, 1, 1);
+    }
 }

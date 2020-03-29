@@ -29,8 +29,10 @@ public class TimeCtrl : MonoBehaviour
         }
         else
         {
-            CurrentTime = MaxTime - (int)Time.timeSinceLevelLoad;
+            
+            CurrentTime = MaxTime - (int)PauseCtrl.self.TrueTime;
         }
         TimeText.text = (CurrentTime.ToString()).PadLeft(MaxLength, PadZero);
     }
+
 }
