@@ -246,6 +246,7 @@ MonoBehaviour:
   NeverDestroyObj:
   - {fileID: 8826559394952747540, guid: 19546f1bc4418419197ffee7b95d58dd, type: 3}
   - {fileID: 1147476210428656125, guid: e648f60034e7e46a8a8d4c3be72d44b2, type: 3}
+  - {fileID: 2863256538120599850, guid: b3ed44802948342c3a18daa51ed5994f, type: 3}
 --- !u!4 &512276550
 Transform:
   m_ObjectHideFlags: 0

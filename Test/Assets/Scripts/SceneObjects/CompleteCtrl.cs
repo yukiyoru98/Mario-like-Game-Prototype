@@ -18,5 +18,11 @@ public class CompleteCtrl : MonoBehaviour
         PlayerCtrl.self.anim.SetBool("Ground", true);
         PlayerCtrl.self.anim.SetBool("JumpingUp", false);
         Debug.Log("Complete!");
+        Invoke("GoToNextLevel", 2f);
+    }
+
+    void GoToNextLevel(){
+        PlayerData.self.NextLevel();
+        LoadingScenes.self.ChangeScene("Level", 0.5f);
     }
 }
