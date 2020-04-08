@@ -27,4 +27,8 @@ public class PauseCtrl : MonoBehaviour
         //TODO:Game Pause UI
          
     }
+
+    public void ResetTrueTime(){
+        TrueTime = 0;
+    }
 }
