@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class PlayerData : MonoBehaviour
+[Serializable]
+public class PlayerData
 {
     public int InitialLife = 3;
     public int CurrentLife;
@@ -11,12 +13,7 @@ public class PlayerData : MonoBehaviour
     public int Money = 0;
     public bool Power = false;
     public int LevelNum = 0;
-    public static PlayerData self;
-    private void Awake() {
-        self = this;    
-    }
-
-    private void Start() {
+    public void Setup() {
         CurrentHP = MaxHP;
         CurrentLife = InitialLife;
         while(Money > 99){

@@ -20,7 +20,7 @@ public class CollisionCtrl : MonoBehaviour
         
         if(collision.gameObject.name == "Block_Root" && collision.GetContact(0).normal == Vector2.down){
             //if hit the bottom of the Block
-            collision.gameObject.SendMessage("isHit", PlayerData.self.Power);
+            collision.gameObject.SendMessage("isHit", PlayerDataManager.self.data.Power);
         }
 
         if(collision.gameObject.name == "CoinBlock_Root" && collision.GetContact(0).normal == Vector2.down){

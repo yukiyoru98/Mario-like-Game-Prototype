@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<PlayerData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <InitialLife>3</InitialLife>
+  <CurrentLife>3</CurrentLife>
+  <MaxHP>3</MaxHP>
+  <CurrentHP>2</CurrentHP>
+  <Money>5</Money>
+  <Power>false</Power>
+  <LevelNum>0</LevelNum>
+</PlayerData>

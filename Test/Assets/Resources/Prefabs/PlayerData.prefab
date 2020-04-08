@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8826559394952747538}
   - component: {fileID: 8826559394952747539}
+  - component: {fileID: -4349738575844861613}
   m_Layer: 0
   m_Name: PlayerData
   m_TagString: Untagged
@@ -40,13 +41,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 8826559394952747540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd3859573a84549cca2464dac66c7a89, type: 3}
+  m_Script: {fileID: 11500000, guid: 483d95458d66b4156af87c4fca14ab99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialLife: 3
-  CurrentLife: 0
-  MaxHP: 3
-  CurrentHP: 0
-  Money: 0
-  Power: 0
-  LevelNum: 0
+  data:
+    InitialLife: 3
+    CurrentLife: 0
+    MaxHP: 3
+    CurrentHP: 0
+    Money: 0
+    Power: 0
+    LevelNum: 0
+--- !u!114 &-4349738575844861613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826559394952747540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef738262ef5bf4ce8baa4d2ee7d2b74d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

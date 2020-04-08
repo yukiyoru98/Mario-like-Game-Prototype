@@ -19,8 +19,8 @@ public class UICoinCtrl : MonoBehaviour
         GetMoney(0); //setup coin num for UI at the beginning of the scene
     }
     public void GetMoney(int money){
-        PlayerData.self.EarnMoney(money);
-        Money = PlayerData.self.Money;
+        PlayerDataManager.self.data.EarnMoney(money);
+        Money = PlayerDataManager.self.data.Money;
         CoinNumText.text = "x " + Money.ToString().PadLeft(MaxLength, PadZero);
 
     }

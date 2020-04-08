@@ -1818,6 +1818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeText: {fileID: 1601623552}
+  MaxTime: 0
 --- !u!4 &1778704814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7520093700267432966, guid: 19a13e83efa3d424182451a41086c4e9,
@@ -2112,12 +2113,12 @@ PrefabInstance:
     - target: {fileID: 143976037147993583, guid: 5e9d1a7a50fc44f5db6d879a5a7f33df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.67
+      value: 11.73
       objectReference: {fileID: 0}
     - target: {fileID: 143976037147993583, guid: 5e9d1a7a50fc44f5db6d879a5a7f33df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 143976037147993583, guid: 5e9d1a7a50fc44f5db6d879a5a7f33df,
         type: 3}
@@ -2260,7 +2261,7 @@ PrefabInstance:
     - target: {fileID: 3255879701121872999, guid: 14faca03c07404d5e9ada7bf4ed09371,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3255879701121872999, guid: 14faca03c07404d5e9ada7bf4ed09371,
         type: 3}
@@ -2477,7 +2478,7 @@ PrefabInstance:
     - target: {fileID: 7571278087517480124, guid: ed3dfc497c1154296a43a1fb4166b8dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7571278087517480124, guid: ed3dfc497c1154296a43a1fb4166b8dd,
         type: 3}

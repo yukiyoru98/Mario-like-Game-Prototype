@@ -16,7 +16,7 @@ public class HPCtrl : MonoBehaviour
 
     private void Start() {
         //create HP UI 
-        for(int i=0; i<PlayerData.self.MaxHP; i++){
+        for(int i=0; i<PlayerDataManager.self.data.MaxHP; i++){
             GameObject hp = Instantiate(Resources.Load(HPPrefabPath), transform) as GameObject;
             hp.transform.localPosition += new Vector3(Distance * i, 0, 0);
             hp.name = "HP" + (i+1);
@@ -25,7 +25,7 @@ public class HPCtrl : MonoBehaviour
     }
 
     public void LoseHP(int hp){
-        PlayerData.self.LoseHP(hp);
-        HPImage[PlayerData.self.CurrentHP].GetComponent<Animation>().Play("HP-Lose");
+        PlayerDataManager.self.data.LoseHP(hp);
+        HPImage[PlayerDataManager.self.data.CurrentHP].GetComponent<Animation>().Play("HP-Lose");
     }
 }

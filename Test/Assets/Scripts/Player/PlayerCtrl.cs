@@ -11,7 +11,7 @@ public class PlayerCtrl : MonoBehaviour
         self = this;
     }
     private float Speed = 10.0f; //determines player's running speed
-    private float JumpVelocity = 600f; //refers to player's ability to jump
+    private float JumpVelocity = 700f; //refers to player's ability to jump
     private float HighFallMultiplier = 3.0f; //multipler for high jump's falling motion
     private float LowFallMultiplier = 2.0f; //multipler for low jump's falling motion
     public Rigidbody2D body;
@@ -126,6 +126,7 @@ public class PlayerCtrl : MonoBehaviour
         HurtBool = true; // player is hurt
         body.velocity = new Vector2(0, body.velocity.y);
         HPCtrl.self.LoseHP(1);
+        
     }
 
     void SetAnimator()

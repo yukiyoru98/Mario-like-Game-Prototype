@@ -11,7 +11,6 @@ public class BlockCtrl : MonoBehaviour
     }
 
     public void isHit(bool Power){
-        Debug.Log("is Hit");
         //play move animation when player's power is not enough -> SetBool Power=false, SetTrigger Hit
         anim.SetBool("Power", Power);
         anim.SetTrigger("Hit");
