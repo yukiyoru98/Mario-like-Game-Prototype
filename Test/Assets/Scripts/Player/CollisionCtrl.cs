@@ -17,9 +17,7 @@ public class CollisionCtrl : MonoBehaviour
     }
     void CollideSceneObj(Collision2D collision){
         
-        //Debug.Log("CollideSceneObj");
-        //Debug.Log(collision.GetContact(0).normal);
-
+        
         if(collision.gameObject.name == "Block_Root" && collision.GetContact(0).normal == Vector2.down){
             //if hit the bottom of the Block
             collision.gameObject.SendMessage("isHit", PlayerData.self.Power);
@@ -31,9 +29,8 @@ public class CollisionCtrl : MonoBehaviour
         }
 
         if(collision.gameObject.name == "Enemy_Root" && collision.GetContact(0).normal == Vector2.up){
-            //if hit the top of the CoinBlock
+            //if hit the top of the Enemy
             collision.gameObject.SendMessage("isKilled");
-            //print(collision.GetContact(0).normal );
         }
         if(collision.gameObject.name == "Complete"){
             //if reach goal

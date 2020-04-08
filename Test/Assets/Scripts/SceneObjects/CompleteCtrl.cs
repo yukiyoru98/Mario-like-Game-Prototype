@@ -16,6 +16,7 @@ public class CompleteCtrl : MonoBehaviour
         PauseCtrl.self.Pause(true);
         PlayerCtrl.self.anim.SetBool("Running", false);
         PlayerCtrl.self.anim.SetBool("Ground", true);
-        Debug.Log("Complete!"+PlayerCtrl.self.anim.GetBool("Ground"));
+        PlayerCtrl.self.anim.SetBool("JumpingUp", false);
+        Debug.Log("Complete!");
     }
 }
