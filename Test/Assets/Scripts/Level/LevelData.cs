@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelData : MonoBehaviour
 {
     public Vector2 CamXRange;
+    public int LevelTime;
 
     public static LevelData self;
     private void Awake() {

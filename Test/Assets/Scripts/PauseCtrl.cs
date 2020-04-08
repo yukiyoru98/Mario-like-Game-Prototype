@@ -29,6 +29,7 @@ public class PauseCtrl : MonoBehaviour
     }
 
     public void ResetTrueTime(){
+        TimeCtrl.self.MaxTime = LevelData.self.LevelTime;
         TrueTime = 0;
     }
 }

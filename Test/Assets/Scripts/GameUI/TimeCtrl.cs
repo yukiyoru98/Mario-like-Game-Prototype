@@ -11,7 +11,7 @@ public class TimeCtrl : MonoBehaviour
     {
         self = this;
     }
-    private int MaxTime = 100;
+    public int MaxTime;
     private int CurrentTime;
     private int MaxLength = 3;
     private char PadZero = '0';

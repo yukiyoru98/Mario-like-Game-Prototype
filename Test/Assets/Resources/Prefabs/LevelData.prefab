@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CamXRange: {x: -3, y: 15}
+  LevelTime: 100

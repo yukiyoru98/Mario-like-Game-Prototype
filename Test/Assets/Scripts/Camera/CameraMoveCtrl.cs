@@ -9,6 +9,7 @@ public class CameraMoveCtrl : MonoBehaviour
     float Duration = 3f;
     private void Start()
     {
+        PauseCtrl.self.ResetTrueTime(); //reset time
         UI.SetActive(false); //hide UI
         this.gameObject.GetComponent<CameraCtrl>().enabled = false; //deactivate CameraCtrl to stop camera from following the player
         PauseCtrl.self.isPaused = true; //pause the game first

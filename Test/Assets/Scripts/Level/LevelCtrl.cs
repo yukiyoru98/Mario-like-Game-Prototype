@@ -8,8 +8,6 @@ public class LevelCtrl : MonoBehaviour
     public Text LifeNumText;
     public Text LevelNumText;
     private void Start() {
-        //reset time
-        PauseCtrl.self.ResetTrueTime();
         //setup Level Text
         int level = PlayerData.self.LevelNum;
         LevelNumText.text = (level / 8 + 1).ToString() + "-" + (level % 8 + 1).ToString();
