@@ -3,8 +3,8 @@
   <InitialLife>3</InitialLife>
   <CurrentLife>3</CurrentLife>
   <MaxHP>3</MaxHP>
-  <CurrentHP>2</CurrentHP>
-  <Money>5</Money>
+  <CurrentHP>1</CurrentHP>
+  <Money>3</Money>
   <Power>false</Power>
   <LevelNum>0</LevelNum>
 </PlayerData>
