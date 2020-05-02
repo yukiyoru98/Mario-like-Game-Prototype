@@ -26,7 +26,6 @@ public class PlayerCtrl : MonoBehaviour
 
     private void Start()
     {
-        
         body = this.gameObject.GetComponent<Rigidbody2D>(); //assign Player_Root's rigidbody2D 
         anim = this.gameObject.transform.GetChild(0).GetComponent<Animator>(); //assign Player's animator 
     }

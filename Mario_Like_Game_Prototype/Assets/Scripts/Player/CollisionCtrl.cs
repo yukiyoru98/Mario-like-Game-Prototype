@@ -6,6 +6,8 @@ public class CollisionCtrl : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "SceneObjects"){
+        Debug.Log("Collision");
+
             CollideSceneObj(collision);
         }
     }
@@ -17,9 +19,10 @@ public class CollisionCtrl : MonoBehaviour
     }
     void CollideSceneObj(Collision2D collision){
         
-        
         if(collision.gameObject.name == "Block_Root" && collision.GetContact(0).normal == Vector2.down){
             //if hit the bottom of the Block
+            Debug.Log("Hit Block");
+            Debug.Log(PlayerDataManager.self.data.Power);
             collision.gameObject.SendMessage("isHit", PlayerDataManager.self.data.Power);
         }
 
@@ -40,6 +43,7 @@ public class CollisionCtrl : MonoBehaviour
     void TriggerSceneObj(Collider2D collider){
         if(collider.gameObject.name == "Coin_Root"){
             //if touch the Coin
+            Debug.Log("GetCoin");
             collider.gameObject.SendMessage("GetCoin");
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnCoin : MonoBehaviour
 {
-    const string path = "Prefabs/Coin_Root";
+    const string path = "Prefabs/SceneObjects/Coin_Root";
 
     void Spawn(){ //generate and return a coin(idle animation played defaultly)
         GameObject Coin = Instantiate(Resources.Load(path)) as GameObject;

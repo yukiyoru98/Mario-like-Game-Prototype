@@ -18,8 +18,8 @@ public class MakerMoveCtrl : MonoBehaviour //Maker/SceneObjects/Maker
     private bool LeftKey;
     private bool RightKey;
 
-    private Vector2 XMoveRange = new Vector2(0, 30);
-    private Vector2 YMoveRange = new Vector2(0, 7);
+    public Vector2 XMoveRange = new Vector2(0, 30);
+    public Vector2 YMoveRange = new Vector2(0, 7);
 
     private void Update()
     {

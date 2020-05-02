@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CameraCtrl : MonoBehaviour
 {
+    public static CameraCtrl self; 
+    private void Awake() {
+        self = this;
+    }
     float min = -3; //min value of camera's x position
     float max = 15; //max value of camera's x position
 
